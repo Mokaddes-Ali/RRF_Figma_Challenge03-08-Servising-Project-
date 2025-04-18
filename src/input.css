@@ -6,6 +6,7 @@
 @theme {
     --font-roboto: 'Roboto', sans-serif;
     --font-bricolage: 'Bricolage Grotesque', sans-serif;
+    --color-red:#DD3142;
 }
 
 @layer base {
@@ -15,11 +16,19 @@
 
     body {
        
-        @apply m-0 p-0 bg-gray-100 text-gray-900 font-roboto font-normal text-base leading-6 not-italic;
+        @apply m-0 p-0 bg-white text-gray-900 font-roboto font-normal text-base leading-6 not-italic;
     }
 
     h1 {
         @apply text-[44px] font-roboto font-bold text-black leading-normal not-italic;
+      }
+
+      h2 {
+        @apply text-[#0E0E0E] font-roboto text-[30px] not-italic font-medium leading-none uppercase;
+      }
+
+      h3 {
+        @apply text-[#6D6D6D] text-center font-roboto text-[14px] not-italic font-normal leading-[133.5%];
       }
 
       p {
@@ -28,39 +37,5 @@
       
 }
 @layer components {
-    .btn {
-        @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-    }
-
-    .dark {
-        @apply bg-gray-900 text-white;
-      }
-    
-      .dark .service-card {
-        @apply bg-gray-800;
-      }
-    
-      .dark .nav-link {
-        @apply text-white;
-      }
-    
-      .dark .red-section {
-        @apply bg-red-900;
-      }
-    
-      .service-card {
-        @apply transition-all duration-300 ease-in-out;
-      }
-    
-      .service-card:hover {
-        @apply -translate-y-2 shadow-2xl;
-      }
-    
-      .toggle-dark-mode {
-        @apply cursor-pointer fixed bottom-5 right-5 z-[100] bg-gray-200 text-gray-800 rounded-full p-2 shadow-md;
-      }
-    
-      .dark .toggle-dark-mode {
-        @apply bg-gray-800 text-gray-200;
-      }
+   
 }
