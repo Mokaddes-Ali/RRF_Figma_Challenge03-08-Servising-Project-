@@ -1,16 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicing Website</title>
-    <link rel="stylesheet" href="./src/output.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plumber Point</title>
+  <link href="./src/output.css" rel="stylesheet">
 </head>
-<body>
-    <h1 class="text-blue-700">Welcome to the Servicing Website</h1>
-    <p>This is a simple HTML page for a servicing website.</p>
-    <p>Feel free to customize it as per your requirements.</p>
+<body class="font-sans">
+  <!-- Dark Mode Toggle -->
+  <button class="toggle-dark-mode" onclick="toggleDarkMode()">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+  </button>
 
+ <!-- Header/Navigation -->
+<header class="w-full bg-white shadow-md dark:bg-gray-800">
+    <div class="container mx-auto px-[55px] py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="/asset/images/logo.png" alt="Logo" class="h-[42px] w-[165px]">
+        </div>
+  
+        <!-- Toggle Button (checkbox hack) -->
+        <div class="lg:hidden">
+          <input id="menu-toggle" type="checkbox" class="hidden peer" />
+          <label for="menu-toggle" class="cursor-pointer">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </label>
+        </div>
+  
+        <!-- Nav menu for lg+ -->
+        <nav class="hidden lg:flex flex-wrap items-center gap-2">
+          <a href="#" class="nav-link px-3 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Home</a>
+          <a href="#" class="nav-link px-3 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">About</a>
+          <a href="#" class="nav-link px-3 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Services</a>
+          <a href="#" class="nav-link px-3 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Project</a>
+          <a href="#" class="nav-link px-3 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Blogs</a>
+          <a href="#" class="nav-link px-3 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Contact</a>
+          <a href="#" class="ml-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">REQUEST A CALL BACK</a>
+        </nav>
+      </div>
+  
+      <!-- Mobile Menu: hidden by default, shown with peer-checked -->
+      <div class="mt-4 flex-col gap-2 lg:hidden hidden peer-checked:flex">
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Home</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">About</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Services</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Project</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Blogs</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-white hover:text-red-600 transition">Contact</a>
+        <a href="#" class="block mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">REQUEST A CALL BACK</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-[55px] pt-12 pb-12 md:pt-24 md:pb-0">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2 dark:text-white">CALL US FOR ANY</h2>
+          <h3 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">PLUMBING NEEDS</h3>
+          <p class="text-2xl md:text-3xl font-bold mb-6 dark:text-white">+1800-9938-2839</p>
+          <button class="bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 transition-colors duration-300 uppercase font-semibold text-sm">See all service</button>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="/asset/images/hero1.2.png" alt="Plumbers in blue uniform" class="w-[302px] h-[436px]" />
+          <img src="/asset/images/hero1.1.png" alt="Plumbers in blue uniform" class="w-[390px] h-[340px]" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="red-section bg-red-600 text-white pb-12">
+    <div class="container mx-auto px-[55px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Service Card 1 -->
+        <div class="service-card bg-red-500 p-6 rounded-lg text-center">
+          <div class="flex justify-center mb-4">
+            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Residential Service</h3>
+          <p class="mb-4 text-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+          <button class="bg-white text-red-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-300">Learn More</button>
+        </div>
+        
+        <!-- Service Card 2 -->
+        <div class="service-card bg-red-500 p-6 rounded-lg text-center">
+          <div class="flex justify-center mb-4">
+            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Commercial Service</h3>
+          <p class="mb-4 text-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+          <button class="bg-white text-red-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-300">Learn More</button>
+        </div>
+        
+        <!-- Service Card 3 -->
+        <div class="service-card bg-red-500 p-6 rounded-lg text-center">
+          <div class="flex justify-center mb-4">
+            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Maintenance</h3>
+          <p class="mb-4 text-sm">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+          <button class="bg-white text-red-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors duration-300">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      
+      // Save preference to localStorage
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    }
+    
+    // Check for saved preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.documentElement.classList.add('dark');
+    }
+    
+    // Check system preference on first visit
+    if (!localStorage.getItem('darkMode')) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    }
+  </script>
 </body>
 </html>
