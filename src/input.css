@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
+
+
 @theme {
     --font-roboto: 'Roboto', sans-serif;
     --font-bricolage: 'Bricolage Grotesque', sans-serif;
@@ -24,18 +26,56 @@
       }
 
       h2 {
-        @apply text-[#0E0E0E] font-roboto text-[30px] not-italic font-medium leading-none uppercase;
+        @apply text-[#0E0E0E] font-roboto text-[30px] not-italic font-medium leading-normal uppercase;
       }
+
 
       h3 {
         @apply text-[#6D6D6D] text-center font-roboto text-[14px] not-italic font-normal leading-[133.5%];
       }
 
-      p {
+      h4 {
         @apply font-roboto text-[14px] font-normal not-italic leading-normal;
       }
       
 }
 @layer components {
+  .nav-text {
+      @apply text-[#222] font-roboto text-[14px] not-italic font-medium leading-normal px-3 py-2 dark:text-white relative;
+    
+  }
+  
+
+  .plumer-point {
+    @apply text-black font-roboto text-[14px] not-italic font-medium leading-normal;
+  }
+  .team-member-name {
+    @apply text-white font-roboto text-[18px] not-italic font-medium leading-normal;
+  }
+
+  .team-member-role {
+    @apply text-white font-roboto text-[20px] not-italic font-medium leading-normal;
+  }  
+  
+  
    
+}
+
+/* Custom underline effect for nav text */
+.nav-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f00; /* You can replace with theme color if needed */
+  transition: all 0.3s ease;
+}
+
+.nav-text:hover::after {
+  width: 40px;
+  height: 3px;
+  left: 8px;
+  bottom: -4px;
 }
